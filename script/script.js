@@ -1,13 +1,12 @@
 
+console.log('Esto es un cronómetro!');
 
 let temporizador;
-contador = 0;
-
+let contador = 0;
 let iniciar = document.getElementById('iniciar');
 let detener = document.getElementById('detener');
 let limpiar = document.getElementById('limpiar');
-
-const cronometro = document.getElementById('cronometro');
+let cronometro = document.getElementById('cronometro');
 
 
 function comenzar(){
@@ -17,7 +16,7 @@ function comenzar(){
 function restaurar(){
     window.clearInterval(temporizador);
     contador = 0; 
-    cronometro.innerHMTMl = contador;
+    cronometro.innerHTML = contador;
 }
 
 function alto(){
@@ -25,10 +24,10 @@ function alto(){
 }
 
 function detener2(){
-    cronometro.innerHTML = count++; 
+    cronometro.innerHTML = contador++; 
 }
 
 
-iniciar.addEventListener('click', iniciar);
-detener.addEventListener('click', detener);
-limpiar.addEventListener('click', limpiar);
+iniciar.addEventListener('click', comenzar);
+detener.addEventListener('click', alto);
+limpiar.addEventListener('click', restaurar);
